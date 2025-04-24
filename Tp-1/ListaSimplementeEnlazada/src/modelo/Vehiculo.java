@@ -19,7 +19,7 @@ public class Vehiculo {
 	}
 	@Override
 	public String toString() {
-		return "Vehiculo [patente=" + patente + ", modelo=" + modelo + "]";
+		return "Vehiculo [patente: " + patente + ", modelo: " + modelo + "]";
 	}
 	public Vehiculo(String patente, String modelo) {
 		super();

@@ -1,11 +1,13 @@
 package modelo;
 
+import Interfaces.ILista;
 
 
 //Saque la implementación implements ILista, OJO ustedes la mantienen
-public class Lista  {
-	
+public class Lista implements ILista {
+
     private Nodo primero;
+
 
     public Lista() {
         this.primero = null;
@@ -17,10 +19,11 @@ public class Lista  {
     }
 
     
-    public void insertarPrimero(Vehiculo dato) {
+    public void insertarPrimero(Vehiculo dato ) {
         Nodo nuevo = new Nodo(dato);
     	if(!esVacia()) {
         nuevo.setSiguiente(primero);
+        primero.setAnterior(nuevo);
         primero = nuevo;
     	}else {
     		primero = nuevo;
@@ -38,6 +41,7 @@ public class Lista  {
                 actual = actual.getSiguiente();
             }
             actual.setSiguiente(nuevo);
+            nuevo.setAnterior(actual);
         }
     }
 
@@ -45,8 +49,11 @@ public class Lista  {
 
    
     public Vehiculo obtenerPrimero() {
-        if (esVacia()) throw new IllegalStateException("Lista vacía");
+        if (esVacia()) {
+            System.out.println("No se encontro el primero");
+        }
         return primero.getDato();
+
     }
 
 
@@ -67,10 +74,21 @@ public class Lista  {
     public void mostrarLista() {
         Nodo actual = primero;
         while (actual != null) {
-        	//getDato --- Del Nodo ---- Vehiculo!!!
-            System.out.print(actual.getDato() +"\n");
+            //getDato --- Del Nodo ---- Vehiculo!!
+            System.out.print("Actual: " + actual.getDato() + "\n");
             actual = actual.getSiguiente();
         }
+
         
     }
+
+    public void buscar() {
+
+    }
+
+    ///  falta crear
+    ///public void insertarGenerico();
+    ///public void eliminarGenerico();
+    ///public void ordenar();
+    /// public void buscar();
 }

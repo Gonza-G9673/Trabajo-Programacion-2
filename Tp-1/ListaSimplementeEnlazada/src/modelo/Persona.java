@@ -35,7 +35,7 @@ public class Persona {
 	
 	@Override
 	public String toString() {
-		return "Persona [dni=" + dni + ", nombre=" + nombre +"]";
+		return "Persona [dni: " + dni + ", nombre: " + nombre +"]";
 	}
 	
 	public Lista getListaVehiculos() {

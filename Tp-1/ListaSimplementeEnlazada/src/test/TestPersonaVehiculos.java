@@ -12,14 +12,16 @@ public class TestPersonaVehiculos {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Persona p = new Persona(11111, "Nico Perez");//Se crea la lista nula!!
-		Vehiculo v = new Vehiculo("11AA222", "Fiat Uno");
-		
-		//Dos formas de insertar en la lista
+		Persona p = new Persona(20456786, "Gonza");//Se crea la lista nula!!
+		Vehiculo v = new Vehiculo("AC 317 NA", "Eco sport");
+		Vehiculo v2 = new Vehiculo("AD 510 IR", "Fiat toro");
+		Vehiculo v3 = new Vehiculo("EL 949 PA", "Limusina alto nivel");
+
+
 		//La primera por parametos, la segunda por referencia
-		p.getListaVehiculos().insertarPrimero(new Vehiculo("xxx111", "Toyota"));
 		p.getListaVehiculos().insertarPrimero(v);
-		
+		p.getListaVehiculos().insertarPrimero(v2);
+		p.getListaVehiculos().insertarUltimo(v3);
 		//Muestro la persona, y sus vehiculos concatenados
 		//Atentos a cómo manejo el toString de ambos y los
 		//procedimientos de mostrar. 
