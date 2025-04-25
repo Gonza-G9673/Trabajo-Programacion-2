@@ -88,13 +88,31 @@ public class Lista implements ILista {
         } if(actual.getSiguiente() == null & String.valueOf(actual.getDato().getPatente()) != d){
             System.out.print("No podemos encontrar lo que buscas!" + "\n");
         } else{
-            System.out.print("Lo que buscas esta en la posición " + contador + " !! \n");
+            System.out.print("La patente: " + d + " esta en la posición " + contador + " y pertenece al vehiculo " +  actual.getDato().getModelo() + " \n");
+        }
+        } else{
+            System.out.print("La lista está vacía!!! \n");
+        }
+    }
+
+    public void buscarModelo(String d) {
+        if(!esVacia()){
+            Nodo actual = primero;
+            int contador = 0;
+        while(d != String.valueOf(actual.getDato().getModelo()) & actual.getSiguiente() != null){
+            actual = actual.getSiguiente();
+            contador ++;
+        } if(actual.getSiguiente() == null & String.valueOf(actual.getDato().getModelo()) != d){
+            System.out.print("No podemos encontrar el modelo que buscas! \n");
+        } else{
+            System.out.print("El modelo: " + d + " esta en la posición " + contador + " y su patente es " + actual.getDato().getPatente() + " \n");
         }
         } else{
             System.out.print("La lista está vacía!!! \n");
         }
     }
 }
+    
 
 
     ///  falta crear

@@ -29,6 +29,8 @@ public class TestPersonaVehiculos {
 
 		p.getListaVehiculos().buscarPatente("AD 510 IR");
 		p.getListaVehiculos().buscarPatente("CD 454 AG");
+		p.getListaVehiculos().buscarModelo("Fiat Toro");
+		p.getListaVehiculos().buscarModelo("Limusina alto nivel");
 		///Notar que toda la información quedó guardada en la persona
 		///
 		///NOTAS: 
