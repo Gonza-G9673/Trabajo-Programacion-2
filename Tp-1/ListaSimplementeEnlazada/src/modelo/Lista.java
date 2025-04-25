@@ -4,7 +4,7 @@ import Interfaces.ILista;
 
 public class Lista implements ILista {
 
-    private Nodo primero;
+    private INodo primero;
 
 
     public Lista() {
@@ -34,7 +34,7 @@ public class Lista implements ILista {
         if (esVacia()) {
             primero = nuevo;
         } else {
-            Nodo actual = primero;
+            INodo actual = primero;
             while (actual.getSiguiente() != null) {
                 actual = actual.getSiguiente();
             }
@@ -58,7 +58,7 @@ public class Lista implements ILista {
    
     public int cantidadElementos() {
         int contador = 0;
-        Nodo actual = primero;
+        INodo actual = primero;
 
         while (actual != null) {
             contador++;
@@ -70,7 +70,7 @@ public class Lista implements ILista {
 
 
     public void mostrarLista() {
-        Nodo actual = primero;
+        INodo actual = primero;
         while (actual != null) {
             //getDato --- Del Nodo ---- Vehiculo!!
             System.out.print("Actual: " + actual.getDato() + "\n");
@@ -80,7 +80,7 @@ public class Lista implements ILista {
 
     public void buscarPatente(String d) {
         if(!esVacia()){
-            Nodo actual = primero;
+            INodo actual = primero;
             int contador = 0;
         while(d != String.valueOf(actual.getDato().getPatente()) & actual.getSiguiente() != null){
             actual = actual.getSiguiente();
@@ -97,7 +97,7 @@ public class Lista implements ILista {
 
     public void buscarModelo(String d) {
         if(!esVacia()){
-            Nodo actual = primero;
+            INodo actual = primero;
             int contador = 0;
         while(d != String.valueOf(actual.getDato().getModelo()) & actual.getSiguiente() != null){
             actual = actual.getSiguiente();
@@ -131,7 +131,7 @@ public class Lista implements ILista {
         if (posicion < 0 ){
             System.out.println("Posición invalida");
         }
-        Nodo actual = primero;
+        INodo actual = primero;
         int buscador = 0;
 
         if (posicion == 0) {
@@ -149,8 +149,8 @@ public class Lista implements ILista {
         if (actual == null) {
             System.out.println("Posición fuera de rango");
         }
-        Nodo anterior = actual.getAnterior();
-        Nodo siguiente = actual.getSiguiente();
+        INodo anterior = actual.getAnterior();
+        INodo siguiente = actual.getSiguiente();
 
         if (anterior != null) {
             anterior.setSiguiente(siguiente);
@@ -160,7 +160,11 @@ public class Lista implements ILista {
         }
         System.out.println("Elemento eliminado en posicion" + posicion + "." );
         }
+
+
+
     }
+
     
 
 
