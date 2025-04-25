@@ -68,35 +68,37 @@ public class Lista implements ILista {
         return contador;
     }
 
- 
+
     public void mostrarLista() {
         Nodo actual = primero;
         while (actual != null) {
             //getDato --- Del Nodo ---- Vehiculo!!
             System.out.print("Actual: " + actual.getDato() + "\n");
             actual = actual.getSiguiente();
-        }
-
-        
-    }
+        }  
+}
 
     public void buscar(String d) {
-        Nodo actual = primero;
-        int contador = 0;
-        while(d != String.valueOf(actual.getDato()) || actual.getSiguiente() == null){
+        if(!esVacia()){
+            Nodo actual = primero;
+            int contador = 0;
+        while(d != String.valueOf(actual.getDato().getPatente()) & actual.getSiguiente() != null){
             actual = actual.getSiguiente();
             contador ++;
-        } if(actual.getSiguiente() == null & String.valueOf(actual.getSiguiente()) != d){
-            System.out.print("No podemos encontrar lo que buscas!");
+        } if(actual.getSiguiente() == null & String.valueOf(actual.getDato().getPatente()) != d){
+            System.out.print("No podemos encontrar lo que buscas!" + "\n");
         } else{
-            System.out.print("Lo que buscas esta en la posición " + contador + " !!");
+            System.out.print("Lo que buscas esta en la posición " + contador + " !! \n");
         }
-
+        } else{
+            System.out.print("La lista está vacía!!! \n");
+        }
     }
+}
+
 
     ///  falta crear
     ///public void insertarGenerico();
     ///public void eliminarGenerico();
     ///public void ordenar();
     /// public void buscar();
-}
