@@ -5,8 +5,8 @@ import Interfaces.INodo;
 public class Nodo implements INodo {
 
 	private Vehiculo dato;
-    private Nodo siguiente; //INodo
-    private Nodo anterior;
+    private INodo siguiente; 
+    private INodo anterior;
 
     public Nodo(Vehiculo dato) {
         this.dato = dato;
@@ -14,18 +14,18 @@ public class Nodo implements INodo {
         this.anterior = null;
     }
 
-    public Nodo(Vehiculo dato, Nodo anterior) {
+    public Nodo(Vehiculo dato, INodo anterior) {
         this.dato = dato;
         this.siguiente = null;
         this.anterior = anterior;
     }
 
 
-    public Nodo getAnterior() {
+    public INodo getAnterior() {
         return anterior;
     }
 
-    public void setAnterior(Nodo anterior) {
+    public void setAnterior(INodo anterior) {
         this.anterior = anterior;
     }
 
@@ -39,12 +39,12 @@ public class Nodo implements INodo {
     }
 
     
-    public Nodo getSiguiente() {
+    public INodo getSiguiente() {
         return siguiente;
     }
 
    
-    public void setSiguiente(Nodo nodo) {
+    public void setSiguiente(INodo nodo) {
         this.siguiente = nodo;
     }
 }
