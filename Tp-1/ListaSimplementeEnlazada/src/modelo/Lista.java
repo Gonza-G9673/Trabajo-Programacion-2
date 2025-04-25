@@ -2,8 +2,6 @@ package modelo;
 
 import Interfaces.ILista;
 
-
-//Saque la implementación implements ILista, OJO ustedes la mantienen
 public class Lista implements ILista {
 
     private Nodo primero;
@@ -82,7 +80,17 @@ public class Lista implements ILista {
         
     }
 
-    public void buscar() {
+    public void buscar(String d) {
+        Nodo actual = primero;
+        int contador = 0
+        while(d != actual.getDato() || actual.getSiguiente() == null){
+            actual = actual.getSiguiente();
+            contador ++;
+        } if(actual.getSiguiente() == null & actual.getSiguiente() != d){
+            System.out.print("No podemos encontrar lo que buscas!");
+        } else{
+            System.out.print("Lo que buscas esta en la posición 2 !!");
+        }
 
     }
 
