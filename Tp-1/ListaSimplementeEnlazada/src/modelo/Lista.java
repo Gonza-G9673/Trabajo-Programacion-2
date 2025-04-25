@@ -82,14 +82,14 @@ public class Lista implements ILista {
 
     public void buscar(String d) {
         Nodo actual = primero;
-        int contador = 0
-        while(d != actual.getDato() || actual.getSiguiente() == null){
+        int contador = 0;
+        while(d != String.valueOf(actual.getDato()) || actual.getSiguiente() == null){
             actual = actual.getSiguiente();
             contador ++;
-        } if(actual.getSiguiente() == null & actual.getSiguiente() != d){
+        } if(actual.getSiguiente() == null & String.valueOf(actual.getSiguiente()) != d){
             System.out.print("No podemos encontrar lo que buscas!");
         } else{
-            System.out.print("Lo que buscas esta en la posición 2 !!");
+            System.out.print("Lo que buscas esta en la posición " + contador + " !!");
         }
 
     }
