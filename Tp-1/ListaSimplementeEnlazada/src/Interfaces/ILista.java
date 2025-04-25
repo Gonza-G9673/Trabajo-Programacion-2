@@ -7,13 +7,15 @@ public interface ILista {
     public boolean esVacia();
     public void insertarPrimero(Vehiculo dato);
     public void insertarUltimo(Vehiculo dato);
-    public Vehiculo obtenerPrimero();
     public int cantidadElementos();
     public void mostrarLista();
-    ///public void insertarGenerico();
-    ///public void eliminarGenerico();
+    public void buscarPatente(String d);
+    public void buscarModelo(String d);
+    public Vehiculo obtenerPrimero();
+    public void insertarGenerico(Vehiculo dato);
+    public void eliminarGenerico(int posicion);
     ///public void ordenar();
-    /// public void buscar();
+
 
 }
 

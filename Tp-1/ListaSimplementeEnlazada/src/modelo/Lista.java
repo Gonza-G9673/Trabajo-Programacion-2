@@ -111,7 +111,56 @@ public class Lista implements ILista {
             System.out.print("La lista está vacía!!! \n");
         }
     }
-}
+    public void insertarGenerico(Vehiculo dato) {
+        Nodo nuevo = new Nodo(dato);
+        if(!esVacia()){
+            nuevo.setSiguiente(primero);
+            primero.setAnterior(nuevo);
+            primero = nuevo;
+
+        }
+        else{
+
+        }
+    }
+
+    public void eliminarGenerico(int posicion){
+        if (esVacia()) {
+            System.out.println("La lista esta vacia");
+        }
+        if (posicion < 0 ){
+            System.out.println("Posición invalida");
+        }
+        Nodo actual = primero;
+        int buscador = 0;
+
+        if (posicion == 0) {
+            primero = actual.getSiguiente();
+            if (primero != null) {
+                primero.setAnterior(null);
+
+            System.out.println("Elemento eliminado en posición 0");
+            }
+            }
+        while (actual != null && buscador < posicion) {
+            actual = actual.getSiguiente();
+            buscador++;
+        }
+        if (actual == null) {
+            System.out.println("Posición fuera de rango");
+        }
+        Nodo anterior = actual.getAnterior();
+        Nodo siguiente = actual.getSiguiente();
+
+        if (anterior != null) {
+            anterior.setSiguiente(siguiente);
+        }
+        if (siguiente != null) {
+            siguiente.setAnterior(anterior);
+        }
+        System.out.println("Elemento eliminado en posicion" + posicion + "." );
+        }
+    }
     
 
 
@@ -119,4 +168,3 @@ public class Lista implements ILista {
     ///public void insertarGenerico();
     ///public void eliminarGenerico();
     ///public void ordenar();
-    /// public void buscar();

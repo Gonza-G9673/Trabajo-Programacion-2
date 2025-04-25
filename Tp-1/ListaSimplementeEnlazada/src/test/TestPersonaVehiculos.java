@@ -3,9 +3,6 @@ package test;
 import modelo.Persona;
 import modelo.Vehiculo;
 
-///Listas simplemente enlazadas N - > sig,  ant
-///Listas doblemete enlazadas (int)
-///Persona que tiene una lista de Vehiculos!!!!
 
 public class TestPersonaVehiculos {
 
@@ -18,13 +15,10 @@ public class TestPersonaVehiculos {
 		Vehiculo v3 = new Vehiculo("EL 949 PA", "Limusina alto nivel");
 
 
-		//La primera por parametos, la segunda por referencia
 		p.getListaVehiculos().insertarPrimero(v);
 		p.getListaVehiculos().insertarPrimero(v2);
 		p.getListaVehiculos().insertarUltimo(v3);
-		//Muestro la persona, y sus vehiculos concatenados
-		//Atentos a cómo manejo el toString de ambos y los
-		//procedimientos de mostrar. 
+
 		p.mostrarPersona();
 
 		p.getListaVehiculos().buscarPatente("AD 510 IR");
