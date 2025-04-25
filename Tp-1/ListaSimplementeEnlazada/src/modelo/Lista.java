@@ -78,7 +78,7 @@ public class Lista implements ILista {
         }  
 }
 
-    public void buscar(String d) {
+    public void buscarPatente(String d) {
         if(!esVacia()){
             Nodo actual = primero;
             int contador = 0;

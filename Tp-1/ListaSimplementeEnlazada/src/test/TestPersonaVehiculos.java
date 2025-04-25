@@ -27,8 +27,8 @@ public class TestPersonaVehiculos {
 		//procedimientos de mostrar. 
 		p.mostrarPersona();
 
-		p.getListaVehiculos().buscar("AD 510 IR");
-		p.getListaVehiculos().buscar("CD 454 AG");
+		p.getListaVehiculos().buscarPatente("AD 510 IR");
+		p.getListaVehiculos().buscarPatente("CD 454 AG");
 		///Notar que toda la información quedó guardada en la persona
 		///
 		///NOTAS: 
