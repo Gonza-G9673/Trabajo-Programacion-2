@@ -72,7 +72,6 @@ public class Lista implements ILista {
     public void mostrarLista() {
         INodo actual = primero;
         while (actual != null) {
-            //getDato --- Del Nodo ---- Vehiculo!!
             System.out.print("Actual: " + actual.getDato() + "\n");
             actual = actual.getSiguiente();
         }  
