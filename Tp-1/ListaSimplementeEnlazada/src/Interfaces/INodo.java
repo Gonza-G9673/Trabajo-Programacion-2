@@ -1,15 +1,14 @@
 package Interfaces;
 
-import modelo.Nodo;
 import modelo.Vehiculo;
 
 public interface INodo  {
 
-    public Nodo getAnterior();
-    public void setAnterior(Nodo anterior);
+    public INodo getAnterior();
+    public void setAnterior(INodo anterior);
     public Vehiculo getDato();
     public void setDato(Vehiculo dato);
-    public Nodo getSiguiente();
-    public void setSiguiente(Nodo nodo);
+    public INodo getSiguiente();
+    public void setSiguiente(INodo nodo);
 
 }

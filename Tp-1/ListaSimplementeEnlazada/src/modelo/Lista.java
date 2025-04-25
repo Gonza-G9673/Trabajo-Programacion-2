@@ -1,6 +1,7 @@
 package modelo;
 
 import Interfaces.ILista;
+import Interfaces.INodo;
 
 public class Lista implements ILista {
 
@@ -43,9 +44,7 @@ public class Lista implements ILista {
         }
     }
 
-  
 
-   
     public Vehiculo obtenerPrimero() {
         if (esVacia()) {
             System.out.println("No se encontro el primero");
@@ -55,7 +54,6 @@ public class Lista implements ILista {
     }
 
 
-   
     public int cantidadElementos() {
         int contador = 0;
         INodo actual = primero;
@@ -110,16 +108,35 @@ public class Lista implements ILista {
             System.out.print("La lista está vacía!!! \n");
         }
     }
-    public void insertarGenerico(Vehiculo dato) {
+    public void insertarGenerico(Vehiculo dato, int posicion) {
         Nodo nuevo = new Nodo(dato);
         if(!esVacia()){
-            nuevo.setSiguiente(primero);
-            primero.setAnterior(nuevo);
+            if(posicion < 0 || posicion > cantidadElementos()){
+                System.out.println("Posición inválida");
+            } else {
+                if(posicion == 0){
+                    insertarPrimero(dato);
+                }
+                INodo actual = primero;
+                int pos = 0;
+                while(pos < posicion-1 && actual != null){
+                    actual = actual.getSiguiente();
+                    pos++;
+                }
+                if (actual == null){
+                    System.out.println("Posicion invalida.");
+                }
+                INodo siguiente = actual.getSiguiente();
+                nuevo.setSiguiente(siguiente);
+
+                if (siguiente != null){
+                    siguiente.setAnterior(nuevo);
+                }
+                System.out.println("Vehiculo insertado en la posicion " + posicion);
+            }
+        }else{
+            System.out.println("No hay vehiculos en la lista!");
             primero = nuevo;
-
-        }
-        else{
-
         }
     }
 
@@ -134,17 +151,18 @@ public class Lista implements ILista {
         int buscador = 0;
 
         if (posicion == 0) {
+            INodo datoEliminado = primero;
             primero = actual.getSiguiente();
+            System.out.println("Se elimino el primer elemento: " + datoEliminado);
             if (primero != null) {
                 primero.setAnterior(null);
-
-            System.out.println("Elemento eliminado en posición 0");
             }
             }
         while (actual != null && buscador < posicion) {
             actual = actual.getSiguiente();
             buscador++;
         }
+        INodo datoEliminado = actual;
         if (actual == null) {
             System.out.println("Posición fuera de rango");
         }
@@ -157,17 +175,8 @@ public class Lista implements ILista {
         if (siguiente != null) {
             siguiente.setAnterior(anterior);
         }
-        System.out.println("Elemento eliminado en posicion" + posicion + "." );
+        System.out.println("Eliminaste " + datoEliminado.getDato().getModelo() + " patente: " + datoEliminado.getDato().getPatente() + " en la posicion " + posicion + "." );
         }
-
-
 
     }
 
-    
-
-
-    ///  falta crear
-    ///public void insertarGenerico();
-    ///public void eliminarGenerico();
-    ///public void ordenar();

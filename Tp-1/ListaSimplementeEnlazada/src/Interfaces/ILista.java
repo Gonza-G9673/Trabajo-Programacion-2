@@ -12,7 +12,7 @@ public interface ILista {
     public void buscarPatente(String d);
     public void buscarModelo(String d);
     public Vehiculo obtenerPrimero();
-    public void insertarGenerico(Vehiculo dato);
+    public void insertarGenerico(Vehiculo dato, int posicion);
     public void eliminarGenerico(int posicion);
     ///public void ordenar();
 

@@ -4,7 +4,7 @@ import modelo.Persona;
 import modelo.Vehiculo;
 
 
-public class TestPersonaVehiculos {
+public class TestGeneral {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -13,6 +13,7 @@ public class TestPersonaVehiculos {
 		Vehiculo v = new Vehiculo("AC 317 NA", "Eco sport");
 		Vehiculo v2 = new Vehiculo("AD 510 IR", "Fiat toro");
 		Vehiculo v3 = new Vehiculo("EL 949 PA", "Limusina alto nivel");
+		Vehiculo v4 = new Vehiculo("EJ 989 AA", "Toyota Corolla");
 
 
 		p.getListaVehiculos().insertarPrimero(v);
@@ -25,6 +26,12 @@ public class TestPersonaVehiculos {
 		p.getListaVehiculos().buscarPatente("CD 454 AG");
 		p.getListaVehiculos().buscarModelo("Fiat Toro");
 		p.getListaVehiculos().buscarModelo("Limusina alto nivel");
+
+
+		p.getListaVehiculos().insertarGenerico(v4, 0);
+		p.getListaVehiculos().eliminarGenerico(3);
+		p.mostrarPersona();
+
 		///Notar que toda la información quedó guardada en la persona
 		///
 		///NOTAS: 

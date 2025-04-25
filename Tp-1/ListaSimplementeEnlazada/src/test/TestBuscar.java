@@ -2,7 +2,7 @@ package test;
 import modelo.Persona;
 import modelo.Vehiculo;
 
-public class TestBuscarModelo {
+public class TestBuscar {
     public static void main(String[] args) {
         Persona p = new Persona(47426621, "Agostina");
         Vehiculo v1 = new Vehiculo("AA 123 CD", "Peugeot 208");
@@ -18,6 +18,11 @@ public class TestBuscarModelo {
         p.getListaVehiculos().buscarModelo("Peugeot 208");
         p.getListaVehiculos().buscarModelo("Ford a");
         p.getListaVehiculos().buscarModelo("Honda civic");
+
+        p.getListaVehiculos().buscarPatente("AA 789 CD");
+        p.getListaVehiculos().buscarPatente("HA 767 CA");
+        p.getListaVehiculos().buscarPatente("AA 456 CD");
+        p.getListaVehiculos().buscarPatente("AA 123 CD");
 
 
 
