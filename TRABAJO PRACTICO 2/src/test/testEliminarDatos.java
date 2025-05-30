@@ -5,13 +5,12 @@ import interfaces.ICompNombre;
 import interfaces.IArbol;
 import modelo.Arbol;
 
-
 public class testEliminarDatos {
 
     public static void main(String[] args) {
 
+        // Acá armamos un array con varias personas para probar
         Persona [] personas = {
-        
                 new Persona (47123321, "Pilar"),
                 new Persona (20122234, "Agostina"),
                 new Persona (46123456, "Gonzalo"),
@@ -39,7 +38,6 @@ public class testEliminarDatos {
         IArbol<Persona> ArbolDNI = new Arbol<>();
         IArbol<Persona> ArbolNombre = new Arbol<>();
 
-        //Tengo que probar y testear las funciones de eliminar
         for (Persona p : personas) {
             ArbolDNI.insertar(p, cmpDni);
             ArbolNombre.insertar(p, cmpNombre);
