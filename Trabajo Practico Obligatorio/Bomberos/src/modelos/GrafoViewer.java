@@ -26,6 +26,11 @@ public class GrafoViewer extends JPanel {
     }
 
     @Override
+    public void setBackground(Color color) {
+        super.setBackground(Color.BLACK);
+    }
+
+    @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
@@ -47,7 +52,7 @@ public class GrafoViewer extends JPanel {
 
                 // Mostrar peso
                 String peso = String.valueOf(entry.getValue());
-                g.setColor(Color.BLACK);
+                g.setColor(Color.WHITE);
                 g.drawString(peso, (x1 + x2) / 2, (y1 + y2) / 2);
             }
 
@@ -58,9 +63,9 @@ public class GrafoViewer extends JPanel {
             int x = (int) nodo.getX() * 80 + 50;
             int y = (int) nodo.getY() * 80 + 50;
             g.setColor(Color.BLUE);
-            g.fillOval(x - 10, y - 10, 20, 20);
-            g.setColor(Color.BLACK);
-            g.drawString(nodo.getNombre(), x - 5, y + 5);
+            g.fillOval(x - 10, y - 10, 55, 30);
+            g.setColor(Color.WHITE);
+            g.drawString(nodo.getNombre(), x - 5, y + 8);
         }
     }
 

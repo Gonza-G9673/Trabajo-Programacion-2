@@ -15,7 +15,7 @@ public class TestBomberos {
         Nodo A = new Nodo("Calle A", 3, 4);
         Nodo B = new Nodo("Calle B", 5, 2);
         Nodo C = new Nodo("Calle C", 6, 5);
-        Nodo D = new Nodo("Calle D", 2, 3);
+        Nodo D = new Nodo("Calle D", 0, 3);
         Nodo E = new Nodo("Calle E", 4, 6);
         Nodo F = new Nodo("Calle F", 7, 3);
         Nodo G = new Nodo("Calle G", 3, 7);
@@ -43,7 +43,6 @@ public class TestBomberos {
         ciudad.conectar(estacion, D, 4);
         ciudad.conectar(A, C, 4);
         ciudad.conectar(B, A, 2);
-        ciudad.conectar(C, C, 2);
         ciudad.conectar(G, A, 1);
         ciudad.conectar(D, G, 3);
         ciudad.conectar(G, H, 2);
