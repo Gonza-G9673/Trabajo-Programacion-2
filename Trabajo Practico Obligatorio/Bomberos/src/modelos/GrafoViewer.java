@@ -7,6 +7,15 @@ import java.util.Map;
 
 public class GrafoViewer extends JPanel {
 
+    // GrafoViewer es una clase que extiende JPanel y se encarga de visualizar un
+    // grafo
+    // Jpanel es un componente de Swing que permite dibujar gráficos y manejar
+    // eventos
+    // Esta clase se utiliza para mostrar el grafo de bomberos y el camino
+    // encontrado por el algoritmo A*
+    // Awt y Swing son bibliotecas de Java para crear interfaces gráficas de usuario
+    // (GUI)
+
     private final Grafo grafo;
     private final List<Nodo> camino;
 
@@ -50,7 +59,7 @@ public class GrafoViewer extends JPanel {
             int y = (int) nodo.getY() * 80 + 50;
             g.setColor(Color.BLUE);
             g.fillOval(x - 10, y - 10, 20, 20);
-            g.setColor(Color.WHITE);
+            g.setColor(Color.BLACK);
             g.drawString(nodo.getNombre(), x - 5, y + 5);
         }
     }
